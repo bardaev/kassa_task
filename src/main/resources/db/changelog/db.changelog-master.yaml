@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bardaev
+      changes:
+        - createTable:
+            tableName: sk_example_table
+            columns:
+              - column:
+                  name: id
+                  type: SERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: obj
+                  type: JSONB
+  - changeSet:
+      id: insert-example
+      author: bardaev
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: obj
+                  value: "{\"current\":0}"
+            schemaName: public
+            tableName: sk_example_table

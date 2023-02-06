@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:13.3
+    container_name: "kassa"
+    environment:
+      POSTGRES_DB: "sk_example_db"
+      POSTGRES_USER: "sk_example_user"
+      POSTGRES_PASSWORD: "sk_example_user"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5432:5432"
+    restart: always
